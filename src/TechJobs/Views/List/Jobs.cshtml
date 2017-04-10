@@ -5,3 +5,17 @@
 @{ 
     // TODO #3 - Use the same list display from Views/Search/Index.cshtml 
 }
+
+@foreach (Dictionary<string, string> job in ViewBag.Jobs)
+    {
+        <table class="job-listing">
+            @foreach (KeyValuePair<string, string> listing in job)
+            {
+                <tr>
+                    <td>@listing.Key</td>
+                    <td>@listing.Value</td>
+                </tr>
+            }
+        </table>
+
+    }
